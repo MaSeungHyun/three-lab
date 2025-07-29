@@ -12,6 +12,14 @@ import {
   INIT_CAMERA_POSITION_DURATION,
   INIT_CAMERA_TARGET_POSITION,
   DEFAULT_CAMERA_POSITION,
+  DEFAULT_FOG_COLOR,
+  DEFAULT_FOG_NEAR,
+  DEFAULT_FOG_FAR,
+  DEFAULT_LIGHT_COLOR,
+  DEFAULT_LIGHT_INTENSITY,
+  DEFAULT_LIGHT_POSITION,
+  CUBE_SIZE,
+  CUBE_COLOR,
 } from "../constants/scene";
 
 export class Scene {
@@ -27,9 +35,17 @@ export class Scene {
 
   constructor() {
     this.scene.background = new THREE.Color(DEFAULT_SCENE_BACKGROUND);
-    this.scene.fog = new THREE.Fog(DEFAULT_SCENE_BACKGROUND, 0.1, 1000);
+    this.scene.fog = new THREE.Fog(
+      DEFAULT_FOG_COLOR,
+      DEFAULT_FOG_NEAR,
+      DEFAULT_FOG_FAR
+    );
     this.sceneHelper.background = null;
-    this.sceneHelper.fog = new THREE.Fog(DEFAULT_SCENE_BACKGROUND, 0.1, 75);
+    this.sceneHelper.fog = new THREE.Fog(
+      DEFAULT_FOG_COLOR,
+      DEFAULT_FOG_NEAR,
+      DEFAULT_FOG_FAR
+    );
 
     this.grid = new THREE.GridHelper(
       GRID_SIZE,
@@ -42,12 +58,19 @@ export class Scene {
   }
 
   public initProject() {
-    const box = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshStandardMaterial({ color: "white" });
+    const box = new THREE.BoxGeometry(CUBE_SIZE, CUBE_SIZE, CUBE_SIZE);
+    const material = new THREE.MeshStandardMaterial({ color: CUBE_COLOR });
     const cube = new THREE.Mesh(box, material);
 
-    const light = new THREE.DirectionalLight(0xffffff, 5);
-    light.position.set(2, 10, 1);
+    const light = new THREE.DirectionalLight(
+      DEFAULT_LIGHT_COLOR,
+      DEFAULT_LIGHT_INTENSITY
+    );
+    light.position.set(
+      DEFAULT_LIGHT_POSITION.x,
+      DEFAULT_LIGHT_POSITION.y,
+      DEFAULT_LIGHT_POSITION.z
+    );
     this.scene.add(cube);
     this.scene.add(light);
   }
@@ -73,8 +96,6 @@ export class Scene {
     this.renderer.setSize(dom.clientWidth, dom.clientHeight);
     dom.appendChild(this.renderer.domElement);
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-
-    this.controls.addEventListener("change", () => {});
 
     this.renderer.setAnimationLoop(() => {
       this.render();

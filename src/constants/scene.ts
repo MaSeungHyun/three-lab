@@ -1,10 +1,24 @@
 // SCENE
 export const DEFAULT_SCENE_BACKGROUND = 0x353535;
 
+// FOG
+export const DEFAULT_FOG_COLOR = 0x353535;
+export const DEFAULT_FOG_NEAR = 0.1;
+export const DEFAULT_FOG_FAR = 75;
+
 // GRID
 export const GRID_SIZE = 1000;
 export const GRID_DIVISION = 2000;
 export const GRID_COLOR = 0x757575;
+
+// LIGHT
+export const DEFAULT_LIGHT_COLOR = 0xffffff;
+export const DEFAULT_LIGHT_INTENSITY = 5;
+export const DEFAULT_LIGHT_POSITION = {
+  x: 2,
+  y: 10,
+  z: 1,
+};
 
 // CAMERA
 export const CAMERA_FOV = 75;
@@ -15,6 +29,10 @@ export const DEFAULT_CAMERA_POSITION = {
   y: 0,
   z: 0.1,
 };
+
+// CUBE
+export const CUBE_SIZE = 1;
+export const CUBE_COLOR = 0xacacac;
 
 // INIT
 export const INIT_CAMERA_POSITION_DURATION = 300;
