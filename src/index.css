@@ -1,68 +1,68 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@layer theme, base, components, utilities;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  body {
+    @apply bg-gc-black-500 text-gc-gray-100;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+@theme {
+  --color-background-db-primary: #444546;
+  --color-background-db-secondary: #272829;
+  --color-background-db-third: #414142;
+
+  --color-gc-black-100: #3f3f3f;
+  --color-gc-black-200: #3e3e3e;
+  --color-gc-black-300: #3c3c3c;
+  --color-gc-black-400: #383838;
+  --color-gc-black-500: #333333;
+  --color-gc-black-600: #282828;
+  --color-gc-black-700: #252525;
+  --color-gc-black-800: #241f1a;
+  --color-gc-black-900: #151515;
+
+  --color-gc-gray-100: #f0f0f0;
+  --color-gc-gray-200: #d3d3d3;
+  --color-gc-gray-300: #9e9e9e;
+  --color-gc-gray-400: #919191;
+  --color-gc-gray-500: #707070;
+  --color-gc-gray-600: #606060;
+  --color-gc-gray-700: #505050;
+  --color-gc-gray-800: #404040;
+  --color-gc-gray-900: #303030;
+
+  --color-gc-cyan-100: #00e1e9;
+  --color-gc-cyan-200: #00ced6;
+  --color-gc-cyan-300: #00a7ae;
+  --color-gc-cyan-400: #00696d;
+  --color-gc-cyan-500: #005255;
+  --color-gc-cyan-600: #32555d;
+  --color-gc-cyan-700: #003638;
+  --color-gc-cyan-800: #002931;
+
+  --shadow-menu-primary: 0 0 3px #005255;
+
+  --color-gc-orange-500: #ff5f00;
+  --color-gc-orange-700: #9e3b00;
+
+  --color-gc-yellow-500: #ffcc00;
+
+  --color-background-db-header: #353535;
+  --color-background-db-header-hover: #454545;
+  --color-background-db-select: #19474e;
+
+  --color-progress-start: #005255;
+  --color-progress-end: #00ced6;
+
+  --color-text-primary: #b1b1b1;
+  --color-text-secondary: #acacac;
+
+  --color-border-primary: #5d5e5f;
+  --color-border-button: #2f3031;
+
+  --animate-slideUpAndFade: slideUpAndFade 0.2s ease-in-out;
+  
 }
