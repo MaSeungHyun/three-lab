@@ -1,7 +1,9 @@
+import Canvas from "./components/Canvas";
+
 export default function App() {
   return (
-    <main>
-      <h1>Hello World!</h1>
+    <main className="w-screen h-screen flex flex-col">
+      <Canvas />
     </main>
   );
 }
