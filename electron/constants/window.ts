@@ -1,0 +1,2 @@
+export const WINDOW_DEFAULT_WIDTH = 1280;
+export const WINDOW_DEFAULT_HEIGHT = 720;
